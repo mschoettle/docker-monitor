@@ -4,4 +4,4 @@ SCRIPT_DIR=`dirname $0`
 # activate virtual environment
 source "$SCRIPT_DIR/.venv/bin/activate"
 
-python monitor.py
+python $SCRIPT_DIR/monitor.py "$@"
