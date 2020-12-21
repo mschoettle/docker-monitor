@@ -1,7 +1,10 @@
 # docker-monitor
+
+[![Build Status](https://travis-ci.com/mschoettle/docker-monitor.svg?branch=main)](https://travis-ci.com/mschoettle/docker-monitor)
+
 Simple docker container monitor informing about non-running and unhealthy containers.
 
-Checks the status of containers containing a given name for their status. Reports containers that are not running or running but unhealthy.
+Checks the status of containers containing a given name. Reports containers that are not running (status is not `running`) or running but their health status is `unhealthy`. The health status is only reported if you are using [`HEALTHCHECK`](https://docs.docker.com/engine/reference/builder/#healthcheck).
 Nothing will be reported if everything is fine to make it compatible with calling the script using a cronjob (`cron` will not send out emails on empty output).
 
 ## How to call
@@ -13,6 +16,8 @@ You therefore need to install the `docker` Python library. It is best to use a v
 2. `source .venv/bin/activate`
 3. `pip install -r requirements/base.txt`
 4. `python monitor.py --container-name <nameOfContainer>`
+
+Note that you could also use your existing system environment and just install the dependencies there, though that is generally not recommended.
 
 ## Development
 
