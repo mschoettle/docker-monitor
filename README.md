@@ -19,6 +19,10 @@ You therefore need to install the `docker` Python library. It is best to use a v
 
 Note that you could also use your existing system environment and just install the dependencies there, though that is generally not recommended.
 
+### Calling `docker-monitor` from a cronjob
+
+To facilitate this task, you can use the helper script `monitor.sh` that ensures `monitor.py` is being called from the virtual environment.
+
 ## Development
 
 ### How to set up development environment
