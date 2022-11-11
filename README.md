@@ -1,6 +1,6 @@
 # docker-monitor
 
-[![Build Status](https://travis-ci.com/mschoettle/docker-monitor.svg?branch=main)](https://travis-ci.com/mschoettle/docker-monitor)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mschoettle/docker-monitor/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mschoettle/docker-monitor/tree/main)
 
 Simple docker container monitor informing about non-running and unhealthy containers.
 
@@ -12,7 +12,7 @@ Nothing will be reported if everything is fine to make it compatible with callin
 
 You therefore need to install the `docker` Python library. It is best to use a virtual environment, for example, using `venv`:
 
-1. `python3.8 -m venv .venv`
+1. `python3.11 -m venv .venv`
 2. `source .venv/bin/activate`
 3. `pip install -r requirements/base.txt`
 4. `python monitor.py --container-name <nameOfContainer>`
@@ -27,7 +27,7 @@ To facilitate this task, you can use the helper script `monitor.sh` that ensures
 
 ### How to set up development environment
 
-1. `python3.8 -m venv .venv`
+1. `python3.11 -m venv .venv`
 2. `source .venv/bin/activate`
 3. `pip install -r requirements/development.txt`
 
