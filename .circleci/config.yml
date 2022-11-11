@@ -22,18 +22,17 @@ jobs:
       - image: cimg/python:<< parameters.version >>
     steps:
       - checkout
-      - run: ls -la ~/
+      - run: python --version
       - run: pip install --upgrade pip
       - python/install-packages:
           pkg-manager: pip
-          app-dir: ~/requirements/
+          app-dir: ~/project/requirements/
           pip-dependency-file: development.txt
-      - run:
-          name: Python version
-          command: python --version
+      - run: flake8 --version
       - run:
           name: Run flake8
           command: flake8
+      - run: mypy --version
       - run:
           name: Run mypy
           command: mypy .
