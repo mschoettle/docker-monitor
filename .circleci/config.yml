@@ -22,6 +22,8 @@ jobs:
       - image: cimg/python:<< parameters.version >>
     steps:
       - checkout
+      - run: ls -la ~/
+      - run: pip install --upgrade pip
       - python/install-packages:
           pkg-manager: pip
           app-dir: ~/requirements/
