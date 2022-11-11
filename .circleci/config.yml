@@ -9,7 +9,7 @@ orbs:
   # Orb commands and jobs help you with common scripting around a language/tool
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
-  python: circleci/python@1.5.0
+  python: circleci/python@2.1.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -28,14 +28,16 @@ jobs:
           pkg-manager: pip
           app-dir: ~/project/requirements/
           pip-dependency-file: development.txt
-      - run: flake8 --version
       - run:
           name: Run flake8
-          command: flake8
-      - run: mypy --version
+          command: |
+            flake8 --version
+            flake8
       - run:
           name: Run mypy
-          command: mypy .
+          command: |
+            mypy --version
+            mypy .
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
