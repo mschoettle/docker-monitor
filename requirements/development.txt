@@ -5,7 +5,7 @@
 flake8==7.0.0  # https://github.com/PyCQA/flake8
 flake8-isort==6.1.1  # https://github.com/gforcada/flake8-isort
 flake8-quotes==3.4.0  # https://github.com/zheller/flake8-quotes
-mypy==1.8.0
+mypy==1.11.2
 
 # Requirements
 #
